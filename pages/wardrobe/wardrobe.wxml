@@ -1,0 +1,30 @@
+<view class="page wardrobe-page {{reducedMotion ? 'reduce-motion' : ''}}">
+  <top-bar title="我的香柜"></top-bar>
+  <view class="wardrobe-heading"><text class="serif count-number">{{count}}</text><text class="count-label">瓶</text><view class="record-link" bindtap="goRecords"><text>最近记录</text><image src="/assets/icons/chevron.svg" mode="aspectFit"></image></view></view>
+  <scroll-view class="filter-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="filters">
+      <view wx:for="{{filters}}" wx:key="*this" class="filter {{activeFilter === item ? 'active' : ''}}" data-value="{{item}}" bindtap="chooseFilter">{{item}}<view wx:if="{{activeFilter === item}}" class="filter-check"></view></view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{empty}}" class="wardrobe-empty">
+    <image class="empty-bottle" src="/assets/bottles/editorial-bottle.png" mode="aspectFit"></image>
+    <text class="serif empty-title">香柜还在等第一瓶</text>
+    <text class="empty-copy">把拥有的香水放进来，推荐才会从你的真实生活开始。</text>
+    <button class="primary-button empty-action" bindtap="goAdd">我有香水，开始添加</button>
+    <button class="ghost-button empty-action" bindtap="goEducation">我还不懂，先认识香调</button>
+  </view>
+
+  <view wx:else class="wardrobe-list">
+    <view wx:for="{{items}}" wx:key="id" class="wardrobe-item surface" data-id="{{item.id}}" bindtap="openDetail">
+      <view class="mini-bottle"><image src="{{item.imagePath}}" mode="aspectFit"></image></view>
+      <view class="wardrobe-copy"><text class="wardrobe-name">{{item.nameZh}}</text><text class="wardrobe-family">{{item.family}}</text></view>
+      <view class="wardrobe-time"><text>{{item.lastUsedLabel}}</text><image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image></view>
+    </view>
+  </view>
+
+  <view class="wardrobe-actions"><button class="primary-button" bindtap="goAdd">＋ 添加一瓶</button></view>
+  <view class="education-entry surface" bindtap="goEducation"><image class="book-icon" src="/assets/icons/book.svg" mode="aspectFit"></image><text>看不懂香调？60秒入门</text><image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image></view>
+  <view class="settings-link" bindtap="goSettings">设置与隐私</view>
+  <bottom-nav active="wardrobe"></bottom-nav>
+</view>

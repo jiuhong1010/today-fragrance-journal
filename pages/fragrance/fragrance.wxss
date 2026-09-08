@@ -1,0 +1,61 @@
+.fragrance-page { padding-bottom: 226rpx; animation: page-enter 360ms cubic-bezier(.16, 1, .3, 1) both; }
+.fragrance-head { padding: 42rpx 0 30rpx; }
+.fragrance-title { font-size: 40rpx; line-height: 1.35; }
+.search-box { height: 84rpx; border: 1rpx solid #36353a; border-radius: 44rpx; display: flex; align-items: center; padding: 0 24rpx; background: #171719; }
+.search-icon { width: 38rpx; height: 38rpx; margin-right: 14rpx; }
+.search-box input { flex: 1; color: #e7e2e8; font-size: 25rpx; }
+.search-placeholder { color: #79757d; }
+.clear-search { min-height: 60rpx; padding-left: 18rpx; display: flex; align-items: center; color: #d66187; font-size: 22rpx; }
+.feeling-guide { margin-top: 25rpx; }
+.guide-label { display: block; color: #8d8790; font-size: 21rpx; }
+.feeling-scroll { width: 100%; margin-top: 15rpx; white-space: nowrap; }
+.feeling-chips { display: inline-flex; gap: 12rpx; padding-right: 24rpx; }
+.feeling-chip { height: 58rpx; padding: 0 24rpx; border: 1rpx solid #2e2c31; border-radius: 31rpx; display: inline-flex; align-items: center; justify-content: center; background: #181719; color: #aaa4ad; font-size: 22rpx; }
+.feeling-chip.selected { border-color: #c4557b; color: #f1e8ed; background: #251a20; }
+.catalog-entry { min-height: 142rpx; margin-top: 28rpx; padding: 24rpx 26rpx; display: flex; align-items: center; background: linear-gradient(135deg, #21191e 0%, #19191b 64%); border-color: #373037; }
+.catalog-copy { flex: 1; min-width: 0; }
+.catalog-kicker { display: block; color: #b597d4; font-size: 19rpx; letter-spacing: 2rpx; }
+.catalog-title { display: block; margin-top: 6rpx; color: #f1edf1; font-family: Georgia, "Songti SC", serif; font-size: 34rpx; }
+.catalog-subtitle { display: block; margin-top: 7rpx; color: #817b84; font-size: 20rpx; }
+.catalog-action { display: flex; align-items: center; margin-left: 16rpx; color: #bd718e; font-size: 21rpx; }
+.catalog-arrow { width: 15rpx; height: 15rpx; margin-left: 13rpx; border-right: 2rpx solid #bd718e; border-bottom: 2rpx solid #bd718e; transform: rotate(45deg) translateY(-3rpx); transition: transform 180ms ease-out; }
+.catalog-arrow.open { transform: rotate(225deg) translate(-2rpx, -1rpx); }
+.perfume-results { margin-top: 20rpx; padding: 4rpx 0 8rpx; }
+.result-summary { min-height: 54rpx; display: flex; align-items: baseline; justify-content: space-between; color: #e6e1e6; font-size: 24rpx; }
+.result-summary text:last-child { color: #77717a; font-size: 20rpx; }
+.perfume-list { display: flex; flex-direction: column; gap: 10rpx; }
+.perfume-card { min-height: 126rpx; padding: 13rpx 20rpx 13rpx 13rpx; border: 1rpx solid #2e2d31; border-radius: 18rpx; display: flex; align-items: center; background: #171719; transition: transform 160ms ease-out, border-color 160ms ease-out; }
+.perfume-card:active { transform: scale(.988); border-color: #51434b; }
+.perfume-photo { width: 91rpx; height: 100rpx; overflow: hidden; flex: 0 0 auto; border-radius: 12rpx; background: #efede9; }
+.perfume-photo image { display: block; width: 100%; height: 100%; }
+.perfume-copy { flex: 1; min-width: 0; padding: 0 20rpx; }
+.perfume-name { display: block; overflow: hidden; color: #eee9ed; font-size: 25rpx; white-space: nowrap; text-overflow: ellipsis; }
+.perfume-meta, .perfume-notes { display: block; overflow: hidden; margin-top: 7rpx; color: #8d8790; font-size: 19rpx; white-space: nowrap; text-overflow: ellipsis; }
+.perfume-notes { color: #716b74; }
+.search-empty { padding: 50rpx 28rpx; border: 1rpx solid #2e2d31; border-radius: 18rpx; text-align: center; background: #171719; }
+.search-empty text:first-child { display: block; color: #d9d3d9; font-size: 24rpx; }
+.search-empty text:last-child { display: block; margin-top: 10rpx; color: #77717a; font-size: 21rpx; }
+.load-more { width: 100%; height: 74rpx; margin-top: 14rpx; color: #a9a2ab; border-color: #343137; font-size: 22rpx; }
+.family-title-row { display: flex; align-items: center; margin: 36rpx 0 22rpx; }
+.section-title { font-size: 28rpx; color: #ede9ee; }
+.scent-map { width: 82rpx; height: 56rpx; margin-left: auto; position: relative; }
+.map-dot { display: block; position: absolute; border: 2rpx solid #b597d4; width: 34rpx; height: 34rpx; border-radius: 50%; opacity: .75; }
+.dot-1 { left: 24rpx; top: 0; }.dot-2 { left: 0; top: 22rpx; }.dot-3 { left: 48rpx; top: 22rpx; }.dot-4 { left: 24rpx; top: 22rpx; }
+.family-list { display: flex; flex-direction: column; gap: 10rpx; }
+.family-block { border: 1rpx solid #303035; border-radius: 16rpx; overflow: hidden; background: #171719; }
+.family-row { min-height: 92rpx; display: flex; align-items: center; padding: 0 20rpx; }
+.family-mark { width: 42rpx; height: 42rpx; margin-right: 16rpx; position: relative; border: 2rpx solid #aaa5ae; border-radius: 50%; }
+.mark-fresh { border-radius: 50% 50% 50% 8rpx; transform: rotate(-45deg); }.mark-floral:before { content: ""; position: absolute; left: 8rpx; top: 8rpx; width: 22rpx; height: 22rpx; border: 2rpx solid currentColor; border-radius: 50%; }.mark-wood { border-radius: 8rpx 50% 8rpx 50%; }.mark-amber { border-radius: 12rpx; transform: rotate(45deg); }
+.family-name { width: 74rpx; font-size: 29rpx; color: #efeaef; }
+.family-descriptor { flex: 1; color: #aba6af; font-size: 24rpx; }
+.family-arrow { width: 18rpx; height: 18rpx; margin-right: 5rpx; border-right: 2rpx solid #9c96a0; border-bottom: 2rpx solid #9c96a0; transform: rotate(45deg) translateY(-4rpx); transition: transform 180ms ease-out; }
+.family-arrow.open { transform: rotate(225deg) translate(-3rpx, -1rpx); }
+.family-block.expanded .family-row { border-bottom: 1rpx solid #303035; }
+.family-block.expanded .family-mark { border-color: #b597d4; color: #b597d4; }
+.family-children { padding: 0 20rpx 20rpx 78rpx; }
+.child-block { padding: 20rpx 0; border-bottom: 1rpx solid #2a292e; }.child-block:last-child { border-bottom: 0; }
+.child-head { display: flex; align-items: baseline; gap: 12rpx; }.child-head > text:first-child { color: #f0edf1; font-size: 26rpx; }.child-feel { color: #aaa5ad; font-size: 23rpx; line-height: 1.5; }
+.child-materials { display: block; color: #8d8991; font-size: 22rpx; margin-top: 10rpx; }.child-tip { display: block; color: #b597d4; font-size: 22rpx; line-height: 1.5; margin-top: 10rpx; }
+.all-families { padding: 24rpx 8rpx; color: #77727a; font-size: 22rpx; text-align: center; }
+.education-entry { height: 96rpx; display: flex; align-items: center; padding: 0 24rpx; margin-top: 10rpx; color: #c4bec7; }.education-entry text:nth-child(2) { flex: 1; margin-left: 18rpx; }.book-icon { width: 40rpx; height: 40rpx; }
+.education-panel { margin-top: 18rpx; padding: 24rpx; }.education-panel-head { display: flex; justify-content: space-between; align-items: baseline; }.edu-card { padding: 20rpx 0; border-top: 1rpx solid #303035; }.edu-title { display: block; color: #f0edf1; font-size: 26rpx; }.edu-body { display: block; margin-top: 8rpx; color: #96919a; line-height: 1.55; font-size: 23rpx; }

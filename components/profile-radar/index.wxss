@@ -1,0 +1,8 @@
+:host { display: block; width: 100%; }
+.radar-shell { width: 292rpx; height: 278rpx; margin: 0 auto; position: relative; }
+.radar-canvas { position: absolute; left: 36rpx; top: 27rpx; width: 220rpx; height: 220rpx; }
+.radar-label { position: absolute; color: #918a95; font-size: 19rpx; line-height: 1; }
+.label-top { left: 50%; top: 0; transform: translateX(-50%); color: #c9c1cd; }
+.label-right { right: 0; top: 50%; transform: translateY(-50%); }
+.label-bottom { left: 50%; bottom: 0; transform: translateX(-50%); }
+.label-left { left: 0; top: 50%; transform: translateY(-50%); }

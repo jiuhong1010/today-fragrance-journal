@@ -1,0 +1,5 @@
+.bottom-nav { position: fixed; z-index: 20; bottom: 0; left: 0; right: 0; min-height: 136rpx; padding-bottom: env(safe-area-inset-bottom); background: rgba(15,15,16,.98); border-top: 1rpx solid #2b292d; display: flex; justify-content: space-around; }
+.nav-item { width: 33.333%; min-height: 136rpx; padding-top: 19rpx; text-align: center; color: #8f8992; font-size: 23rpx; display: flex; flex-direction: column; align-items: center; }
+.nav-item.active { color: #d65c84; }
+.nav-icon { width: 47rpx; height: 47rpx; margin-bottom: 7rpx; }
+.nav-item text { line-height: 1.3; letter-spacing: 1rpx; }

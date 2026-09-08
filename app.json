@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/today/today",
+    "pages/result/result",
+    "pages/wardrobe/wardrobe",
+    "pages/fragrance/fragrance",
+    "pages/add/add",
+    "pages/records/records",
+    "pages/detail/detail",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#101011",
+    "backgroundColor": "#101011",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "usingComponents": {
+    "top-bar": "/components/top-bar/index",
+    "bottom-nav": "/components/bottom-nav/index"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

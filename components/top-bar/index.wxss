@@ -1,0 +1,5 @@
+.top-wrap { width: 100%; position: relative; }
+.top-row { min-height: 88rpx; display: flex; align-items: center; justify-content: center; position: relative; }
+.top-title { color: #f1edf0; font-size: 32rpx; font-weight: 500; letter-spacing: 1rpx; line-height: 1; }
+.back-hit { position: absolute; left: -12rpx; width: 76rpx; height: 64rpx; display: flex; align-items: center; justify-content: center; z-index: 2; }
+.back-icon { width: 44rpx; height: 44rpx; }

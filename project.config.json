@@ -1,0 +1,47 @@
+{
+  "description": "今日用香志｜MVP 0.1",
+  "packOptions": {
+    "ignore": [
+      {"value": ".zip", "type": "suffix"},
+      {"value": ".md", "type": "suffix"},
+      {"value": "content/perfumes.v1.json", "type": "file"},
+      {"value": "content/layering.v1.json", "type": "file"},
+      {"value": "content/manifest.v1.json", "type": "file"},
+      {"value": "assets/perfumes-editorial-source", "type": "folder"}
+    ],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false,
+    "compileHotReLoad": true,
+    "coverView": true,
+    "lazyCodeLoading": "requiredComponents",
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.7.3",
+  "appid": "wxfe4885fb71162d9c",
+  "projectname": "today-fragrance-journal",
+  "condition": {},
+  "simulatorPluginLibVersion": {},
+  "editorSetting": {}
+}

@@ -1,0 +1,5 @@
+<view class="page records-page">
+  <top-bar title="最近记录" show-back="{{true}}"></top-bar>
+  <view wx:if="{{empty}}" class="records-empty"><text class="serif empty-title">还没有用香记录</text><text class="empty-copy">下一次记下今天，让你的香柜慢慢变成自己的地图。</text></view>
+  <view wx:else class="timeline"><view wx:for="{{records}}" wx:key="recordId" class="record-item"><view class="timeline-dot"></view><view class="record-date">{{item.dateLabel}}</view><view class="record-body surface"><view><text class="record-name">{{item.name}}</text><text class="record-meta">{{item.family}} · {{item.goal}} · {{item.occasion}}</text></view><text class="rating rating-{{item.rating === '很适合' ? 'good' : item.rating === '翻车' ? 'bad' : 'normal'}}">{{item.rating}}</text></view></view></view>
+</view>

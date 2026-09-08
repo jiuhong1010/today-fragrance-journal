@@ -1,0 +1,47 @@
+<view class="page fragrance-page {{reducedMotion ? 'reduce-motion' : ''}}">
+  <top-bar title="闻香" show-back="{{showBack}}"></top-bar>
+  <view class="fragrance-head"><text class="serif fragrance-title">先从感觉开始，不必背术语</text></view>
+  <view class="search-box"><image class="search-icon" src="/assets/icons/search.svg" mode="aspectFit"></image><input value="{{search}}" placeholder="试试“干净”“雨后”或“温柔”" placeholder-class="search-placeholder" bindinput="onSearch" /><text wx:if="{{search}}" class="clear-search" bindtap="clearSearch">清除</text></view>
+
+  <view class="feeling-guide">
+    <text class="guide-label">不知道香调？按你熟悉的感觉找</text>
+    <scroll-view class="feeling-scroll" scroll-x="true" show-scrollbar="false">
+      <view class="feeling-chips"><view wx:for="{{feelingPresets}}" wx:key="*this" class="feeling-chip {{search === item ? 'selected' : ''}}" data-value="{{item}}" bindtap="chooseFeeling">{{item}}</view></view>
+    </scroll-view>
+  </view>
+
+  <view class="catalog-entry surface" bindtap="toggleCatalog">
+    <view class="catalog-copy"><text class="catalog-kicker">香水资料库</text><text class="catalog-title">{{perfumeCount}} 款香水</text><text class="catalog-subtitle">可以按感觉、名字、品牌或香材查找</text></view>
+    <view class="catalog-action"><text>{{search ? '返回全部' : (catalogOpen ? '收起' : '浏览')}}</text><view class="catalog-arrow {{catalogOpen || search ? 'open' : ''}}"></view></view>
+  </view>
+
+  <view wx:if="{{showPerfumeList}}" class="perfume-results">
+    <view class="result-summary"><text>{{search ? '符合这种感觉的香水' : '香水资料'}}</text><text>{{resultCount}} 款</text></view>
+    <view wx:if="{{!resultCount}}" class="search-empty"><text>暂时没找到对应香水</text><text>可以换成“干净”“温柔”这样的感受词。</text></view>
+    <view wx:else class="perfume-list">
+      <view wx:for="{{displayedPerfumes}}" wx:key="id" class="perfume-card" data-id="{{item.id}}" bindtap="openPerfume">
+        <view class="perfume-photo"><image src="{{item.imagePath}}" mode="aspectFit"></image></view>
+        <view class="perfume-copy"><text class="perfume-name">{{item.nameZh}}</text><text class="perfume-meta">{{item.brand}} · {{item.family}}</text><text class="perfume-notes">{{item.materialLine}}</text></view>
+        <image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image>
+      </view>
+    </view>
+    <button wx:if="{{canLoadMore}}" class="ghost-button load-more" bindtap="loadMore">再看 6 款</button>
+  </view>
+
+  <view class="family-title-row"><text class="section-title">4 个大方向 · 14 个香气家族</text><view class="scent-map"><view class="map-dot dot-1"></view><view class="map-dot dot-2"></view><view class="map-dot dot-3"></view><view class="map-dot dot-4"></view></view></view>
+  <view class="family-list">
+    <view wx:for="{{filteredFamilies}}" wx:key="name" class="family-block {{expanded === item.name ? 'expanded' : ''}}">
+      <view class="family-row" data-name="{{item.name}}" bindtap="toggleFamily"><view class="family-mark mark-{{item.key}}"></view><text class="family-name">{{item.name}}</text><text class="family-descriptor">{{item.descriptor}}</text><view class="family-arrow {{expanded === item.name ? 'open' : ''}}"></view></view>
+      <view wx:if="{{expanded === item.name}}" class="family-children">
+        <view wx:for="{{item.children}}" wx:key="name" class="child-block"><view class="child-head"><text>{{item.name}}</text><text class="child-feel">{{item.feel}}</text></view><text class="child-materials">常见香材　{{item.materials}}</text><text class="child-tip">{{item.tip}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="all-families">14 个是香气家族知识，不是香水数量</view>
+  <view class="education-entry surface" bindtap="openEducation"><image class="book-icon" src="/assets/icons/book.svg" mode="aspectFit"></image><text>一分钟入门 · 前中后调是什么？</text><image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image></view>
+  <view wx:if="{{showEducation}}" class="education-panel surface">
+    <view class="education-panel-head"><text class="section-label small">一分钟短卡</text><text class="subtle">60 秒内读完</text></view>
+    <view wx:for="{{educationCards}}" wx:key="title" class="edu-card"><text class="edu-title">{{item.title}}</text><text class="edu-body">{{item.body}}</text></view>
+  </view>
+  <bottom-nav active="fragrance"></bottom-nav>
+</view>

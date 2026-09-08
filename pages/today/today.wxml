@@ -1,0 +1,41 @@
+<view class="page today-page {{reducedMotion ? 'reduce-motion' : ''}}">
+  <top-bar title="今日用香志"></top-bar>
+
+  <view class="today-intro">
+    <text class="serif intro-title">今天想留下什么气息？</text>
+    <text class="intro-copy">先选一种感觉，再让场合与温度替你校正。</text>
+    <view class="goal-grid">
+      <view wx:for="{{primaryGoalOptions}}" wx:key="*this" class="goal-chip {{selection.goal === item ? 'selected' : ''}}" data-value="{{item}}" bindtap="chooseGoal">
+        <view wx:if="{{selection.goal === item}}" class="chip-check"></view><text>{{item}}</text>
+      </view>
+    </view>
+    <view class="distance-choice {{selection.goal === '保持距离' ? 'selected' : ''}}" data-value="保持距离" bindtap="chooseGoal">
+      <view class="distance-copy"><text>保持距离</text><text>安静、克制，不必靠近</text></view>
+      <view class="distance-select"><view wx:if="{{selection.goal === '保持距离'}}" class="chip-check"></view><text>{{selection.goal === '保持距离' ? '已选择' : '选择'}}</text></view>
+    </view>
+  </view>
+
+  <view class="environment-block">
+    <view class="section-label small">今天的环境</view>
+    <view class="environment-list surface">
+      <picker mode="selector" range="{{occasionOptions}}" value="{{occasionIndex}}" bindchange="chooseOccasion">
+        <view class="environment-row"><image class="row-symbol" src="/assets/icons/briefcase.svg" mode="aspectFit"></image><text class="row-label">场合</text><text class="row-value">{{selection.occasion}}</text><image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image></view>
+      </picker>
+      <view class="hairline"></view>
+      <picker mode="selector" range="{{temperatureOptions}}" value="{{temperatureIndex}}" bindchange="chooseTemperature">
+        <view class="environment-row"><image class="row-symbol" src="/assets/icons/temperature.svg" mode="aspectFit"></image><text class="row-label">体感</text><text class="row-value">{{selection.temperature}}</text><image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image></view>
+      </picker>
+    </view>
+  </view>
+
+  <button class="primary-button reveal-button {{shakeCooldown ? 'is-loading' : ''}}" disabled="{{shakeCooldown}}" bindtap="reveal">
+    <image class="shake-icon" src="/assets/icons/shake.svg" mode="aspectFit"></image>
+    <view class="reveal-copy"><text>{{shakeCooldown ? '正在挑选…' : '摇一摇，选出今天的味道'}}</text><text>也可以轻点按钮</text></view>
+  </button>
+
+  <view class="education-entry surface" bindtap="goEducation">
+    <image class="book-icon" src="/assets/icons/book.svg" mode="aspectFit"></image><view class="education-copy"><text>一分钟认识香调</text><text>从感觉开始，不必先背术语</text></view><image class="chevron-icon" src="/assets/icons/chevron.svg" mode="aspectFit"></image>
+  </view>
+
+  <bottom-nav active="today"></bottom-nav>
+</view>

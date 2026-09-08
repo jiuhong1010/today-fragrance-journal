@@ -1,0 +1,31 @@
+{
+  "contentVersion": 1,
+  "status": "draft",
+  "expectedCounts": {
+    "perfumes": 50,
+    "layeringPairs": 30,
+    "perfumeImages": 50
+  },
+  "expectedPerfumeMacroFamilyCounts": {
+    "清新系": 15,
+    "花香系": 13,
+    "琥珀系": 10,
+    "木质系": 12
+  },
+  "expectedLayeringPairTypeCounts": {
+    "清新+木质": 8,
+    "柑橘/绿意+花香": 6,
+    "花香+木质": 5,
+    "花香+琥珀": 4,
+    "果香+干燥木质/芳香草本": 4,
+    "水生+芳香草本/木质": 3
+  },
+  "publishGate": {
+    "perfumeContentStatus": "publishable",
+    "perfumeSourceStatus": "official-reviewed",
+    "perfumeImageStatus": "brand-authorized-reviewed",
+    "layeringContentStatus": "publishable",
+    "requiredSourceFields": ["sourceUrls", "sourceCheckedAt", "reviewedBy"],
+    "maxLayeringAppearancesPerPerfume": 3
+  }
+}

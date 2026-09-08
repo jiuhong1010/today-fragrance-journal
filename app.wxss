@@ -1,0 +1,120 @@
+page {
+  --bg: #0f0f10;
+  --surface: #19191b;
+  --surface-raised: #1d1d20;
+  --line: #302e33;
+  --text: #f1edf0;
+  --muted: #a29ca5;
+  --subtle: #7f7982;
+  --rose: #d66187;
+  --rose-pressed: #bc4a70;
+  --violet: #b49ad1;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", sans-serif;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+view, text, button, input, textarea, scroll-view {
+  box-sizing: border-box;
+}
+
+button { margin: 0; padding: 0; }
+button::after { border: 0; }
+
+.page {
+  min-height: 100vh;
+  padding: 0 32rpx 190rpx;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+.serif {
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-weight: 400;
+}
+
+.muted { color: var(--muted); }
+.subtle { color: var(--subtle); }
+.violet { color: var(--violet); }
+.rose { color: var(--rose); }
+
+.section-label {
+  color: #e7e3e8;
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
+  margin-bottom: 22rpx;
+}
+
+.section-label.small {
+  font-size: 24rpx;
+  color: #bcb8be;
+  margin-bottom: 18rpx;
+}
+
+.surface {
+  background: var(--surface);
+  border: 1rpx solid var(--line);
+  border-radius: 20rpx;
+}
+
+.ghost-button {
+  color: #ded9df;
+  background: transparent;
+  border: 1rpx solid #656168;
+  border-radius: 18rpx;
+  height: 92rpx;
+  font-size: 28rpx;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-button {
+  color: #fff8fb;
+  background: #ca5078;
+  border-radius: 18rpx;
+  width: 100%;
+  min-height: 100rpx;
+  font-size: 30rpx;
+  line-height: 1.3;
+  letter-spacing: 1rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14rpx 34rpx rgba(116, 32, 61, .24);
+  transition: transform 160ms ease-out, background-color 160ms ease-out;
+}
+.primary-button:active { background: var(--rose-pressed); transform: scale(.985); }
+
+.text-button {
+  color: #d65c84;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 26rpx;
+  line-height: 1.3;
+}
+
+.empty-title { font-size: 34rpx; margin-bottom: 14rpx; }
+.empty-copy { color: #9c98a0; line-height: 1.7; font-size: 26rpx; }
+
+scroll-view { height: auto; }
+
+.icon-36 { width: 36rpx; height: 36rpx; }
+.icon-40 { width: 40rpx; height: 40rpx; }
+.chevron-icon { width: 36rpx; height: 36rpx; flex: 0 0 auto; }
+
+@keyframes page-enter {
+  from { opacity: .35; transform: translateY(10rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reduce-motion { animation: none !important; }
+.reduce-motion .bottle-image,
+.reduce-motion .detail-bottle image { animation: none !important; }
+.reduce-motion .goal-chip,
+.reduce-motion .wardrobe-item,
+.reduce-motion .family-arrow { transition: none !important; }

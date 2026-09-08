@@ -1,0 +1,7 @@
+<view class="page settings-page">
+  <top-bar title="设置与隐私" show-back="{{true}}"></top-bar>
+  <view class="privacy-note surface"><text class="serif">这是一本只在你设备上的用香札记。</text><text>香柜、记录和偏好不会上传。更换设备、删除小程序数据或清理缓存后无法恢复。</text></view>
+  <view class="settings-group surface"><view class="setting-row"><text>减少动态效果</text><switch color="#d65c84" checked="{{reducedMotion}}" bindchange="toggleMotion"></switch></view><view class="setting-row"><text>数据版本</text><text class="setting-value">v{{schemaVersion}}</text></view><view class="setting-row"><text>内容库版本</text><text class="setting-value">v{{contentVersion}}</text></view></view>
+  <view class="danger-zone"><button class="danger-button" bindtap="clearData">清除我的数据</button><text>内置香水资料和闻香科普会保留。</text></view>
+  <view class="settings-foot">今日用香志 · MVP 0.1<br/>内容描述为编辑整理，不构成绝对适配结论。</view>
+</view>

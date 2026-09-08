@@ -1,0 +1,47 @@
+<view class="page result-page {{reducedMotion ? 'reduce-motion' : ''}}">
+  <top-bar title="今日用香" show-back="{{true}}"></top-bar>
+
+  <block wx:if="{{status === 'ok'}}">
+    <view class="result-heading">
+      <view class="context-pill"><text>{{selection.goal}}</text><text>{{selection.temperature}} · {{selection.occasion}}</text></view>
+      <view class="scent-drop"></view>
+    </view>
+    <view class="result-hero">
+      <view class="result-copy"><text class="serif result-name">{{candidate.nameZh}}</text><text class="result-en">{{candidate.nameEn}}</text><text class="result-brand">{{candidate.brand}} · {{candidate.concentration}}</text></view>
+      <view class="bottle-column">
+        <view class="bottle-stage" bindtap="openDetail"><image class="bottle-image" src="{{candidate.imagePath}}" mode="aspectFit"></image><text class="photo-mark">实物图</text></view>
+        <view class="bottle-link" bindtap="openDetail"><text>查看资料</text><image src="/assets/icons/chevron.svg" mode="aspectFit"></image></view>
+      </view>
+    </view>
+    <view class="family-line"><text class="family-pill">{{candidate.family}}</text><text wx:for="{{candidate.keyMaterials}}" wx:key="name" class="material">{{item.name}}</text></view>
+    <view class="reason-block"><text>{{reason.first}}</text><text>{{reason.second}}</text></view>
+
+    <view class="insight-panel">
+      <view class="profile-area">
+        <view class="insight-heading"><text>香气维度</text><text>越靠外，特征越明显</text></view>
+        <profile-radar profile="{{candidate.profile}}"></profile-radar>
+      </view>
+      <view class="spray-area">
+        <view class="insight-heading"><text>推荐喷法</text><text>先少量，再判断</text></view>
+        <view class="spray-count"><text>{{candidate.defaultSpray.sprays}}</text><text>喷</text></view>
+        <text class="spray-place">{{sprayPlaces}}</text>
+        <text class="spray-refresh">{{candidate.defaultSpray.refresh}}</text>
+      </view>
+    </view>
+
+    <button class="primary-button save-button" bindtap="saveToday">记下今天</button>
+    <view class="action-row"><button class="ghost-button secondary-action" disabled="{{shakeCooldown}}" bindtap="changeOne">{{shakeCooldown ? '正在换…' : '换一瓶'}}</button><button wx:if="{{layeringPair}}" class="ghost-button secondary-action" bindtap="showLayering">试试叠香</button></view>
+    <text class="shake-hint">{{candidateCount > 1 ? '再次摇动手机，也会换一瓶且不立即重复' : '当前条件只有这一瓶合适'}}</text>
+  </block>
+
+  <block wx:elif="{{status === 'empty'}}">
+    <view class="empty-result"><image class="empty-bottle-visual" src="/assets/bottles/editorial-bottle.png" mode="aspectFit"></image><text class="serif empty-title">先把香柜填起来</text><text class="empty-copy">{{noMatchCopy}}</text><button class="primary-button empty-action" bindtap="goWardrobe">添加我的香水</button><button class="ghost-button empty-action" bindtap="goToday">回到今天</button></view>
+  </block>
+
+  <block wx:elif="{{status === 'no-match'}}">
+    <view class="empty-result"><view class="no-match-symbol"><view></view></view><text class="serif empty-title">今天没有完全合适的一瓶</text><text class="empty-copy">{{noMatchCopy}}</text><button class="primary-button empty-action" bindtap="goToday">放宽环境条件</button><button class="ghost-button empty-action" bindtap="goWardrobe">整理香柜</button></view>
+  </block>
+
+  <block wx:else><view class="loading-copy">正在从你的香柜里找一条合适的气味线索…</view></block>
+  <bottom-nav active="today"></bottom-nav>
+</view>

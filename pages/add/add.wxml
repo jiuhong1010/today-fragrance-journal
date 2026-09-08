@@ -1,0 +1,24 @@
+<view class="page add-page {{reducedMotion ? 'reduce-motion' : ''}}">
+  <top-bar title="添加一瓶" show-back="{{true}}"></top-bar>
+  <view class="mode-tabs"><view class="mode-tab {{mode === 'builtin' ? 'active' : ''}}" data-mode="builtin" bindtap="switchMode">内置资料</view><view class="mode-tab {{mode === 'manual' ? 'active' : ''}}" data-mode="manual" bindtap="switchMode">手动添加</view></view>
+
+  <block wx:if="{{mode === 'builtin'}}">
+    <view class="search-box"><image class="search-icon" src="/assets/icons/search.svg" mode="aspectFit"></image><input value="{{search}}" placeholder="搜索香水、品牌或香调" placeholder-class="search-placeholder" bindinput="onSearch" /></view>
+    <scroll-view class="filter-scroll" scroll-x="true" show-scrollbar="false"><view class="filters"><view wx:for="{{filters}}" wx:key="*this" class="filter {{activeFilter === item ? 'active' : ''}}" data-value="{{item}}" bindtap="chooseFilter">{{item}}</view></view></scroll-view>
+    <view class="catalog-list"><view wx:for="{{perfumes}}" wx:key="id" class="catalog-row surface"><view class="catalog-image-wrap"><image class="catalog-image" src="{{item.imagePath}}" mode="aspectFit"></image></view><view class="catalog-copy"><text>{{item.nameZh}}</text><text>{{item.brand}} · {{item.family}}</text></view><button wx:if="{{!item.added}}" class="add-mini" data-id="{{item.id}}" bindtap="addBuiltin">添加</button><text wx:else class="added-label">已在香柜</text></view></view>
+  </block>
+
+  <block wx:else>
+    <view class="manual-intro"><text class="serif">把不在资料库里的那瓶，也放进今天。</text><text>完成这些字段后，它就能参与本地推荐。</text></view>
+    <view class="form-block surface">
+      <view class="form-row input-row"><text>名称</text><input placeholder="例如：朋友送的白茶" value="{{form.name}}" data-key="name" bindinput="inputForm" /></view>
+      <picker range="{{familyOptions}}" value="{{familyIndex}}" data-key="family" bindchange="choosePicker"><view class="form-row"><text>香调家族</text><text class="form-value">{{form.family}}</text></view></picker>
+      <view class="picker-grid"><picker range="{{intensityOptions}}" value="{{intensityIndex}}" data-key="intensity" bindchange="choosePicker"><view class="form-row compact"><text>浓淡</text><text class="form-value">{{form.intensity}}</text></view></picker><picker range="{{projectionOptions}}" value="{{projectionIndex}}" data-key="projection" bindchange="choosePicker"><view class="form-row compact"><text>扩散</text><text class="form-value">{{form.projection}}</text></view></picker></view>
+      <view class="picker-grid"><picker range="{{temperatureOptions}}" value="{{temperatureIndex}}" data-key="temperature" bindchange="choosePicker"><view class="form-row compact"><text>适合温度</text><text class="form-value">{{form.temperature}}</text></view></picker><picker range="{{occasionOptions}}" value="{{occasionIndex}}" data-key="occasion" bindchange="choosePicker"><view class="form-row compact"><text>适合场合</text><text class="form-value">{{form.occasion}}</text></view></picker></view>
+      <picker range="{{goalOptions}}" value="{{goalIndex}}" data-key="goal" bindchange="choosePicker"><view class="form-row"><text>想留下的气息</text><text class="form-value">{{form.goal}}</text></view></picker>
+      <view class="form-row textarea-row"><text>使用感受</text><textarea maxlength="80" placeholder="可选，写下你自己的感受" value="{{form.feeling}}" data-key="feeling" bindinput="inputForm"></textarea></view>
+    </view>
+    <text class="form-note">这些内容只保存在当前设备，来源标记为“用户填写”。</text>
+    <button class="primary-button save-manual" bindtap="saveManual">放入我的香柜</button>
+  </block>
+</view>

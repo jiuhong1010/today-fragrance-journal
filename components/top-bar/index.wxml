@@ -1,0 +1,8 @@
+<view class="top-wrap" style="padding-top: {{statusBarHeight}}px">
+  <view class="top-row" style="height: {{navigationHeight}}px">
+    <view wx:if="{{showBack}}" class="back-hit" style="top: {{backTop}}px" bindtap="goBack" aria-label="返回上一页">
+      <image class="back-icon" src="/assets/icons/back.svg" mode="aspectFit"></image>
+    </view>
+    <text class="top-title">{{title}}</text>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="bottom-nav">
+  <view class="nav-item {{active === 'today' ? 'active' : ''}}" data-key="today" bindtap="go">
+    <image class="nav-icon" src="{{active === 'today' ? '/assets/icons/nav-today-active.svg' : '/assets/icons/nav-today.svg'}}" mode="aspectFit"></image><text>今日</text>
+  </view>
+  <view class="nav-item {{active === 'wardrobe' ? 'active' : ''}}" data-key="wardrobe" bindtap="go">
+    <image class="nav-icon" src="{{active === 'wardrobe' ? '/assets/icons/nav-wardrobe-active.svg' : '/assets/icons/nav-wardrobe.svg'}}" mode="aspectFit"></image><text>香柜</text>
+  </view>
+  <view class="nav-item {{active === 'fragrance' ? 'active' : ''}}" data-key="fragrance" bindtap="go">
+    <image class="nav-icon" src="{{active === 'fragrance' ? '/assets/icons/nav-fragrance-active.svg' : '/assets/icons/nav-fragrance.svg'}}" mode="aspectFit"></image><text>闻香</text>
+  </view>
+</view>

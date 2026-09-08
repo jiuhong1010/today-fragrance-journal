@@ -1,0 +1,7 @@
+<view class="radar-shell" aria-label="{{ariaLabel}}">
+  <canvas type="2d" id="profileRadar" class="radar-canvas"></canvas>
+  <text class="radar-label label-top">清冽</text>
+  <text class="radar-label label-right">扩散</text>
+  <text class="radar-label label-bottom">甜润</text>
+  <text class="radar-label label-left">戏剧</text>
+</view>

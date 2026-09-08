@@ -1,0 +1,7 @@
+<view class="page detail-page {{reducedMotion ? 'reduce-motion' : ''}}" wx:if="{{item}}">
+  <top-bar title="香水详情" show-back="{{true}}"></top-bar>
+  <view class="detail-hero"><view class="detail-bottle"><image src="{{item.imagePath}}" mode="aspectFit"></image></view><text class="serif detail-name">{{item.nameZh}}</text><text class="detail-en">{{item.nameEn}}</text><text class="family-pill">{{item.family}}</text></view>
+  <view class="detail-copy"><text class="detail-brand">{{item.brand}} · {{item.concentration}}</text><view class="material-row"><view wx:for="{{item.keyMaterials}}" wx:key="name" class="material-card"><text>{{item.name}}</text><text>{{item.feel}}</text></view></view></view>
+  <view class="detail-meta surface"><view><text>浓淡</text><text>{{item.intensity === 1 ? '轻' : item.intensity === 2 ? '适中' : '浓郁'}}</text></view><view><text>扩散</text><text>{{item.projection === 1 ? '贴肤' : item.projection === 2 ? '适中' : item.projection === 3 ? '明显' : '强'}}</text></view><view><text>适合温度</text><text>{{temperaturesText}}</text></view><view><text>推荐喷法</text><text>{{item.defaultSpray.sprays}} 喷 · {{sprayPlaces}}</text></view></view>
+  <button class="primary-button detail-action" bindtap="toggleWardrobe">{{isOwned ? '移出我的香柜' : '放入我的香柜'}}</button>
+</view>

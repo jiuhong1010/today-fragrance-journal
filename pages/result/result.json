@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "profile-radar": "/components/profile-radar/index"
+  }
+}

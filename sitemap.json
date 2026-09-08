@@ -1,0 +1,4 @@
+{
+  "desc": "今日用香志 sitemap",
+  "rules": [{"action": "allow", "page": "*"}]
+}
